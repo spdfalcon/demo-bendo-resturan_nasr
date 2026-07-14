@@ -1,5 +1,10 @@
-import { extras, featureGroups } from "@/data/features";
+import { extras, FEATURE_COUNT, featureGroups } from "@/data/features";
 import { SiteHeader } from "@/components/SiteHeader";
+
+const featureCountFa = String(FEATURE_COUNT).replace(
+  /\d/g,
+  (d) => "۰۱۲۳۴۵۶۷۸۹"[Number(d)],
+);
 
 export default function Home() {
   return (
@@ -127,7 +132,7 @@ export default function Home() {
               امکانات نرم‌افزار
             </p>
             <h2 className="mt-3 text-3xl font-black text-[var(--ink)] md:text-5xl">
-              ۵۰ امکان بندو
+              {featureCountFa} امکان بندو
             </h2>
             <p className="mt-4 text-lg leading-9 text-[var(--ink-soft)]">
               از راه‌اندازی مجموعه تا فروش، انبار و گزارش‌ها — آنچه برای مدیریت
